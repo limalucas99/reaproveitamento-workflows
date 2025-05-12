@@ -13,4 +13,4 @@ jobs:
               run: echo "Publicação da Relase final"
     CD:
        needs: [CI]
-       uses: limalucas99/reaproveitamento-workflows/.github/workflows/cd.yaml@main
+       uses: limalucas99/reaproveitamento-workflows/.github/workflows/cd.yml@main
