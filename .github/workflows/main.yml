@@ -14,3 +14,5 @@ jobs:
     CD:
        needs: [CI]
        uses: limalucas99/reaproveitamento-workflows/.github/workflows/cd.yml@main
+       with:
+        ambiente: producao
