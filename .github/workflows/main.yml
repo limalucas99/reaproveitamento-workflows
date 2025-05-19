@@ -1,16 +1,6 @@
 name: CI/CD Fake
 on: 
     workflow_dispatch:  
-        inputs:
-            ambiente:
-                type: choice
-                default: "desenvolvimento"
-                required: true
-                description: "ambiente onde deve ser feito o deploy"
-                options:
-                    - desenvolvimento
-                    - homologacao
-                    - producao
 jobs:
     CI:
         runs-on: ubuntu-latest
@@ -24,5 +14,5 @@ jobs:
     CD:
        needs: [CI]
        uses: limalucas99/reaproveitamento-workflows/.github/workflows/cd.yml@main
-       with:
-        ambiente: ${{ inputs.ambiente }}
+       secrets: 
+         ambiente: ${{ secrets.AMBIENTE_ENTREGA }}
